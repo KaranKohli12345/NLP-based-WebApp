@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+</head>
+<body>
+
+    <div>
+    <h1>NLP WebApp</h1>
+    
+    <h3>What would you like to perform?</h3>
+
+    <ul>
+        <button><a href="/ner">NER</a></button>
+        <button><a href="/Sentiment_Analysis">Sentiment analysis</a></button>
+        <button><a href="/Language_Detection">Languauge Detection</a></button>
+    </ul>
+
+    </div>
+
+</body>
+</html>

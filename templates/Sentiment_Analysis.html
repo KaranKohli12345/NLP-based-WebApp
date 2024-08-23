@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ner.css') }}">
+</head>
+<body>
+    
+    <div>
+    
+    <h1>NLP WebApp</h1>
+
+    <h2>Sentiment Analysis</h2>
+
+    <form action="/perform_Sentiment_Analysis" method="post">
+        <label for="">Enter text</label><br><br>
+        <textarea name="Sentiment_Analysis_text" id=""></textarea><br><br>
+        <button>Analyse</button>
+    </form>
+
+    {% if result %}
+        {% for i in result %}
+            <p>{{ i ~ ' -> ' ~ (result[i] | string) }}</p>
+        {% endfor %}
+    {% endif %}
+
+
+    <br>
+    <button><a href="/profile">Go back</a></button>
+
+    </div>
+</body>
+</html>

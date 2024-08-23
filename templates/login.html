@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLP WebApp | Login Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+
+    <div>
+    
+    <h1>NLP WebApp</h1>
+
+    {% if message %}
+        <p style="color: green;">{{ message }}</p>
+    {% endif %}
+
+    <h3>Enter your credentials</h3>
+
+    <form action="/perform_login" method="post">
+        <label for="">Email</label><br>
+        <input type="email" name="user_ka_email" required><br>
+        <label for="">Password</label><br>
+        <input type="password" name="user_ka_password" required><br><br> 
+        <button>Login</button>
+    </form>
+
+    <p>Not a member? <a href="/register">Register</a></p>
+
+    </div>
+</body>
+</html>

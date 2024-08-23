@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLP WebApp | Register Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+</head>
+<body>
+    
+    <div>
+
+    <h1>NLP WebApp</h1>
+
+    {% if message %}
+        <p style="color: red;">{{ message }}</p>
+    {% endif %}
+
+    <h3>Enter your credentials</h3>
+
+    <form action="/perform_registration" method="post">
+        <label for="">Name</label><br>
+        <input type="text" name="user_ka_name" required><br>
+        <label for="">Email</label><br>
+        <input type="email" name="user_ka_email" required><br>
+        <label for="">Password</label><br>
+        <input type="password" name="user_ka_password" required><br><br> 
+        <button>Register</button>
+    </form>
+
+    <p>Already a member? <a href="/">Login</a></p>
+
+    </div>
+</body>
+</html>

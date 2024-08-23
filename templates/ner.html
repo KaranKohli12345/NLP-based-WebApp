@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NER</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ner.css') }}">
+</head>
+<body>
+    
+    <div>
+    
+    <h1>NLP WebApp</h1>
+
+    <h2>NER</h2>
+
+    <form action="/perform_ner" method="post">
+        <label for="">Enter text</label><br><br>
+        <textarea name="ner_text" id=""></textarea><br><br>
+        <button>Analyse</button>
+    </form>
+
+    {% if result %}
+        {% for i in result %}
+            <p>{{ i + ' -> ' + result[i] }}</p>
+        {% endfor %}
+    {% endif %}
+
+    <br>
+    <button><a href="/profile">Go back</a></button>
+
+    </div>
+</body>
+</html>
